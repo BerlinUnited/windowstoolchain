@@ -1,21 +1,24 @@
--- this file has to be located within the cross compile directory
-
--- use the current directory as root for the ctc
-local crossDir = path.getabsolute(".")
+--
 local linux = "i686-naothwin32-linux-gnu"
-local crossSystemDir = crossDir .. "/" .. linux
+local gcc = "4.5.3"
 
 -- intel atom
 local cpu_flags = "-m32 -march=i686 -msse -msse2 -mssse3"
+
+-- handy definitions for some pathes
+local crossDir = path.getabsolute(".") --NAO_CROSSCOMPILE .. "/" .. linux
+local crossSystemDir = crossDir .. "/" .. linux
 
 -- system pathes needed for cross compilation
 local cross_flags = 
    " --sysroot=" .. crossSystemDir .. "/sysroot/" ..
    " -isystem"   .. crossSystemDir .. "/sysroot/usr/include/" .. 
+   " -isystem"   .. crossSystemDir .. "/include/c++/" .. gcc .. "/" .. 
    " -L"         .. crossSystemDir .. "/sysroot/usr/lib/"
 
    
 -- DEFINE A NEW PLATFORM --
+   
 -- the following steps are needed to add the nao cross compiler to the platforms
 -- extend the command line option list
 table.insert(premake.option.list["platform"].allowed, { "Nao", "Nao v4 (from NaoTH)" })
@@ -31,6 +34,7 @@ table.insert(premake.fields.platforms.allowed, "Nao")
 -- GCC/G++ settings
 premake.gcc.platforms.Nao =
 {
+  --
   cppflags = "-MMD",
   flags = cpu_flags .. cross_flags
 }

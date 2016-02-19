@@ -1,6 +1,6 @@
 --
-local linux = "i686-naothwin32-linux-gnu"
-local gcc = "4.5.3"
+local linux = "i686-berlinunited-linux-gnu"
+local gcc = "4.9.3" 
 
 -- intel atom
 local cpu_flags = "-m32 -march=i686 -msse -msse2 -mssse3"

@@ -1,4 +1,4 @@
-# WindowsToolChain 2015
+# WindowsToolChain 2016 - update
 
 Version 0.4  
 GCC Version 4.9.3  

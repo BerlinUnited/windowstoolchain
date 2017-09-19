@@ -6,6 +6,7 @@ Visual Studio 2013
 
 = Changes from 0.5 =  
  - added Whistledetector libs  
+ - added protobuf pdb files for vs2013  
 
 
 = Changes from 0.4 =  

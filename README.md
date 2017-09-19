@@ -1,8 +1,12 @@
 # WindowsToolChain 2016 - update
 
-Version 0.5  
+Version 0.6  
 GCC Version 4.9.3  
 Visual Studio 2013  
+
+= Changes from 0.5 =  
+ - added Whistledetector libs  
+
 
 = Changes from 0.4 =  
  - fixed typo in protobuf version in last changelog  

@@ -12,7 +12,7 @@ REM try to find the protoc.exe, if it there we assume the path is already added
 :check_protoc
 where protoc.exe
 if not errorlevel 1 goto protoc_exists
-echo add the bin path (premake4 and all the dll)
+echo add the bin path (premake5 and all the dlls)
 setx PATH "%path%;%~dp0toolchain_native\extern\bin;"
 echo added following to the PATH:
 echo "%~dp0toolchain_native\extern\bin"

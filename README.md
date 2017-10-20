@@ -1,11 +1,14 @@
-# WindowsToolChain 2016 - update
+# WindowsToolChain 2017
 
-Version 0.6  
+Version 0.9  
 GCC Version 4.9.3  
 Visual Studio 2013  
 
-= Changes from 0.5 =  
+= Changes from 0.8 =  
+ - use premake5
  - added Whistledetector libs  
+ - updated protobuf to version 3.4.1
+ - deleted unused protobuf lite
  - added protobuf pdb files for vs2013  
  - added eigen 3.3.4
 

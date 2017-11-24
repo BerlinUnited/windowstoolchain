@@ -81,6 +81,9 @@ echo --else
 echo --	PATH:includedirs {"my/native/includes/path"}
 echo --	PATH:libdirs {"my/native/libs/path"}
 echo --end
+echo -- additional defines for visual studio   
+echo -- filter {"system:windows", "action:vs*"}
+echo --   flags {"MultiProcessorCompile"} -- enable multi processor compilation in visual studio
 echo.
 EXIT /B
 

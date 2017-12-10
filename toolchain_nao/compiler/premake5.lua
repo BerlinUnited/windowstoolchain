@@ -16,33 +16,6 @@ local cross_flags =
    " -isystem"   .. crossSystemDir .. "/include/c++/" .. gcc .. "/" .. 
    " -L"         .. crossSystemDir .. "/sysroot/usr/lib/"
 
-   
--- DEFINE A NEW PLATFORM --
-   
--- the following steps are needed to add the nao cross compiler to the platforms
--- extend the command line option list
---table.insert(premake.option.list["platform"].allowed, { "Nao", "Nao v5 (from NaoTH)" })
--- extend the global variable
---[[
-premake.platforms.Nao = 
-{ 
-  cfgsuffix       = "Nao",
-  iscrosscompiler = true,
-}
---]]
--- and one more (we are called after the automatic binding)
--- table.insert(premake.fields.platforms.allowed, "Nao")
-
--- GCC/G++ settings
---[[
-premake.tools.gcc.platforms.Nao =
-{
-  --
-  cppflags = "-MMD",
-  flags = cpu_flags .. cross_flags
-}
-]]--
-
 local gcc = premake.tools.gcc
 
 if(_OPTIONS["platform"] == "Nao") then

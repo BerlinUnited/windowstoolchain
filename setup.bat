@@ -85,6 +85,16 @@ echo -- additional defines for visual studio
 echo -- filter {"system:windows", "action:vs*"}
 echo --   flags {"MultiProcessorCompile"} -- enable multi processor compilation in visual studio
 echo.
+echo -- needed for compiling of LogSimulatorJNI, paths must be adjusted
+echo --[[
+echo if _OPTIONS["JNI"] ~= nil then
+echo   includedirs {
+echo     "C:/Program Files (x86)/Java/jdk1.8.0_131/include",
+echo     "C:/Program Files (x86)/Java/jdk1.8.0_131/include/win32"
+echo   }
+echo end
+echo ]]
+echo.
 EXIT /B
 
 

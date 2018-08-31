@@ -32,7 +32,10 @@ echo .
 :add_mintty
 REM try to find mintty.exe and generate add_mintty.reg
 where mintty.exe
-if errorlevel 1 goto the_end
+if errorlevel 1 (
+	echo Could not find mintty.exe
+	goto the_end
+)
 echo Generate "add_mintty.reg"
 REM read the mintty.exe path
 for /f "delims=" %%A in ('where mintty.exe') do set "MINTTY_PATH=%%A"

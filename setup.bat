@@ -58,9 +58,6 @@ echo.
 echo -- for native platform
 echo -- default: "../../Extern"
 echo EXTERN_PATH_NATIVE = %EXTERN_PATH_NATIVE:\=/%
-echo -- webots instalation if available
-echo -- default: os.getenv("WEBOTS_HOME")
-echo WEBOTS_HOME = nil
 echo.
 echo -- path to the crosscompiler and libs
 echo -- default: os.getenv("NAO_CTC")
@@ -76,27 +73,19 @@ echo -- naoqi toolchain needed to compile the NaoSMAL
 echo -- default: os.getenv("AL_DIR")
 echo AL_DIR = nil
 echo.
-echo -- example: add additional dirs for both platforms
-echo --if PLATFORM == "Nao" then
-echo --	PATH:includedirs {"my/nao/includes/path"}
-echo --	PATH:libdirs {"my/nao/libs/path"}
-echo --else
-echo --	PATH:includedirs {"my/native/includes/path"}
-echo --	PATH:libdirs {"my/native/libs/path"}
-echo --end
-echo -- additional defines for visual studio   
-echo -- filter {"system:windows", "action:vs*"}
-echo --   flags {"MultiProcessorCompile"} -- enable multi processor compilation in visual studio
+echo function set_user_defined_paths() 
 echo.
-echo -- needed for compiling of LogSimulatorJNI, paths must be adjusted
-echo --[[
-echo if _OPTIONS["JNI"] ~= nil then
-echo   includedirs {
-echo     "C:/Program Files (x86)/Java/jdk1.8.0_131/include",
-echo     "C:/Program Files (x86)/Java/jdk1.8.0_131/include/win32"
-echo   }
+echo   -- add your additional include directories here
+echo   -- sysincludedirs { "my/nao/includes/path1" }
+echo.
+echo   -- add your additional lib directories here
+echo   --syslibdirs { "my/nao/libs/path1" }
+echo.
+echo   -- NOTE: this should be used only for project internal files
+echo   -- use this ONLY if you know what you are doing
+echo   --includedirs {}
+echo   --libdirs {}
 echo end
-echo ]]
 echo.
 EXIT /B
 

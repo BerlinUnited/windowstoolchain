@@ -3,7 +3,7 @@
 
 ======================================================
  SFSEXP: Small, Fast S-Expression Library version 1.2
- Written by Matthew Sottile (matt@cs.uoregon.edu)
+ Written by Matthew Sottile (mjsottile@gmail.com)
 ======================================================
 
 Copyright (2003-2006). The Regents of the University of California. This
@@ -88,7 +88,7 @@ LA-CC-04-094
  * \section credits Credits
  *
  * SFSEXP: Small, Fast S-Expression Library version 1.2, October 2007 \n
- * Written by Matthew Sottile (matt@cs.uoregon.edu)
+ * Written by Matthew Sottile (mjsottile@gmail.com)
  * 
  * \section license License Information
  *
@@ -557,7 +557,7 @@ typedef struct sexp_iowrap {
    * Byte count for last read.  If it is -1, there was an error.  Otherwise,
    * it will be a value from 0 to BUFSIZ.
    */
-  int cnt;
+  size_t cnt;
 } sexp_iowrap_t;
 
 /*========*/
@@ -663,6 +663,16 @@ extern "C" {
    * Allocate a new sexp_t element representing a list.
    */
   sexp_t *new_sexp_list(sexp_t *l);
+
+  /**
+   * Allocate a new sexp_t element representing a raw binary atom.
+   * This element will contain a pointer to the raw binary data
+   * provided, as well as the binary data length.  The character
+   * atom fields will be NULL and the corresponding val
+   * length and allocation size will be set to zero since this
+   * element is carrying a binary pointer only.
+   */
+  sexp_t *new_sexp_binary_atom(char *data, size_t binlength);
   
   /**
    * Allocate a new sexp_t element representing a value.  The user must
@@ -753,6 +763,16 @@ extern "C" {
    * reset the value of sexp_errno to SEXP_ERR_OK.
    */
   void reset_sexp_errno();
+
+  /**
+   * print the contents of the parser continuation stack to a buffer.
+   * this is useful if an expression is partially parsed and the caller
+   * realizes that something is wrong with it.  with this routine,
+   * the caller can reconstruct the expression parsed so far and use it
+   * for error reporting.  this works with fixed size buffers allocated
+   * by the caller.  there is not a CSTRING-based version currently.
+   */
+  void print_pcont(pcont_t * pc, char * buf, size_t buflen);
 
 /* this is for C++ users */
 #ifdef __cplusplus

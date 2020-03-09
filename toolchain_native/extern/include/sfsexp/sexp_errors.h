@@ -3,7 +3,7 @@
 
 ======================================================
  SFSEXP: Small, Fast S-Expression Library version 1.2
- Written by Matthew Sottile (matt@cs.uoregon.edu)
+ Written by Matthew Sottile (mjsottile@gmail.com)
 ======================================================
 
 Copyright (2003-2006). The Regents of the University of California. This
@@ -127,7 +127,21 @@ typedef enum {
   /**
    * unknown parser state
    */
-  SEXP_ERR_UNKNOWN_STATE
+  SEXP_ERR_UNKNOWN_STATE,
+
+  /**
+   * parsing is incomplete and need more data to complete it.
+   */
+  SEXP_ERR_INCOMPLETE,
+
+  /**
+   * this error code indicates that an atom was created with
+   * the incorrect constructor.  For example, attempting to
+   * create a binary mode atom with the new_sexp_atom
+   * constructor intended for text atoms will cause this to
+   * be set.
+   */
+  SEXP_ERR_BAD_CONSTRUCTOR
 
 } sexp_errcode_t;
 

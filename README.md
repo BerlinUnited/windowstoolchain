@@ -1,4 +1,13 @@
-# WindowsToolChain 2017
+# WindowsToolChain
+
+Version 2020-04-29
+GCC Version 4.9.3  
+Visual Studio 2013  
+LLVM 9.0.0
+
+- added support for clang for compiling the code for the nao
+
+## older version
 
 Version 0.9  
 GCC Version 4.9.3  

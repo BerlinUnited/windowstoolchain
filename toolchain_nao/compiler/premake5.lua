@@ -19,10 +19,11 @@ if(_OPTIONS["platform"] == "Nao") then
     
     -- speciffic options for clang
     buildoptions {
-      "-target i686-pc-linux-gnu"
+      "--target=i686-berlinunited-linux-gnu"
     }
     linkoptions {
-      "-target i686-pc-linux-gnu",
+      "--target=i686-berlinunited-linux-gnu",
+      "--gcc-toolchain=" .. crossDir,
       --"-fuse-ld=" .. COMPILER_PATH_NAO .. "/bin/i686-berlinunited-linux-gnu-ld.exe"
       "-fuse-ld=lld" -- use the native linker of clang
     }

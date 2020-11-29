@@ -27,6 +27,7 @@ if(_OPTIONS["platform"] == "Nao") then
       --"-fuse-ld=" .. COMPILER_PATH_NAO .. "/bin/i686-berlinunited-linux-gnu-ld.exe"
       "-fuse-ld=lld" -- use the native linker of clang
     }
+    premake.tools.clang.tools.ar = "llvm-ar"
   else
     print("INFO: Crosscompile with GCC " .. version)
     

@@ -3,7 +3,7 @@
 
 ======================================================
  SFSEXP: Small, Fast S-Expression Library version 1.2
- Written by Matthew Sottile (matt@cs.uoregon.edu)
+ Written by Matthew Sottile (mjsottile@gmail.com)
 ======================================================
 
 Copyright (2003-2006). The Regents of the University of California. This

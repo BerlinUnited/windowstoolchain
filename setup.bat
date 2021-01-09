@@ -73,7 +73,9 @@ echo -- naoqi toolchain needed to compile the NaoSMAL
 echo -- default: os.getenv("AL_DIR")
 echo AL_DIR = nil
 echo.
-echo _OPTIONS["crosscompiler"] = "gcc" -- set "clang" to use CLANG
+echo if PLATFORM == "Nao" then
+echo    _OPTIONS["crosscompiler"] = "gcc" -- set "clang" if needed
+echo end
 echo.
 echo function set_user_defined_paths() 
 echo.

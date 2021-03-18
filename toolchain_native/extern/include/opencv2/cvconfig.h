@@ -1,5 +1,5 @@
 /* OpenCV compiled as static or dynamic libs */
-#define BUILD_SHARED_LIBS
+/* #undef BUILD_SHARED_LIBS */
 
 /* Compile for 'real' NVIDIA GPU architectures */
 #define CUDA_ARCH_BIN ""
@@ -56,11 +56,11 @@
 /* #undef HAVE_DC1394_2 */
 
 /* DirectX */
-#define HAVE_DIRECTX
-#define HAVE_DIRECTX_NV12
-#define HAVE_D3D11
-#define HAVE_D3D10
-#define HAVE_D3D9
+/* #undef HAVE_DIRECTX */
+/* #undef HAVE_DIRECTX_NV12 */
+/* #undef HAVE_D3D11 */
+/* #undef HAVE_D3D10 */
+/* #undef HAVE_D3D9 */
 
 /* DirectShow Video Capture library */
 #define HAVE_DSHOW
@@ -96,8 +96,8 @@
 /* #undef HAVE_INTELPERC */
 
 /* Intel Integrated Performance Primitives */
-#define HAVE_IPP
-#define HAVE_IPP_ICV_ONLY
+/* #undef HAVE_IPP */
+/* #undef HAVE_IPP_ICV_ONLY */
 
 /* Intel IPP Async */
 /* #undef HAVE_IPP_A */
@@ -126,7 +126,7 @@
 /* #undef HAVE_OPENCL_SVM */
 
 /* OpenEXR codec */
-#define HAVE_OPENEXR
+/* #undef HAVE_OPENEXR */
 
 /* OpenGL support*/
 /* #undef HAVE_OPENGL */
@@ -168,13 +168,13 @@
 /* #undef HAVE_UNICAP */
 
 /* Video for Windows support */
-#define HAVE_VFW
+/* #undef HAVE_VFW */
 
 /* V4L2 capturing support in videoio.h */
 /* #undef HAVE_VIDEOIO */
 
 /* Win32 UI */
-#define HAVE_WIN32UI
+/* #undef HAVE_WIN32UI */
 
 /* XIMEA camera support */
 /* #undef HAVE_XIMEA */

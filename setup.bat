@@ -68,10 +68,13 @@ echo COMPILER_PATH_NAO = nil
 echo -- default: NAO_CTC .. "/extern"
 echo EXTERN_PATH_NAO = nil
 echo.
-echo.
 echo -- naoqi toolchain needed to compile the NaoSMAL
 echo -- default: os.getenv("AL_DIR")
 echo AL_DIR = nil
+echo.
+echo.
+echo -- optional: manualy enable/disable colors
+echo -- print_colors = true
 echo.
 echo if PLATFORM == "Nao" then
 echo    _OPTIONS["crosscompiler"] = "gcc" -- set "clang" if needed

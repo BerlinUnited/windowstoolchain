@@ -80,6 +80,10 @@ echo if PLATFORM == "Nao" then
 echo    _OPTIONS["crosscompiler"] = "gcc" -- set "clang" if needed
 echo end
 echo.
+echo -- if _ACTION == "vs2019" then
+echo --   flags{"MultiProcessorCompile"}
+echo -- end
+echo.
 echo function set_user_defined_paths() 
 echo.
 echo   -- add your additional include directories here
